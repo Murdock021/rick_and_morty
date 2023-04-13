@@ -1,6 +1,7 @@
 import './App.css';
 import Cards from './components/Cards.jsx';
 import About from './components/About';
+import Error from './components/Error';
 import Detail from './components/Detail';
 import Form from './components/Form';
 import Nav from './components/Nav';
@@ -71,6 +72,7 @@ function App() {
             <Route path='/about' element={<About />} />
             <Route path='/detail/:id' element={<Detail />} />
             <Route path='/favorites' element={<Favorites />} />
+            <Route path='*' element={<Error/>} />
          </Routes>
 
       </div>
