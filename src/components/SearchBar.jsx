@@ -1,10 +1,17 @@
-export default function SearchBar(onSearch) {
+import { useState } from "react";
+
+export default function SearchBar({onSearch}) {
+   
+   const [id, setId] = useState('');
+   
+   const handleChange = (event) =>{
+      setId(event.target.value)
+   }
+
    return (
       <div>
-         <nav>
-            <input type='search' placeholder="Id." />
-            <button onClick={onSearch}>Agregar</button> 
-         </nav>
+            <input type ='search' onChange ={handleChange} value = {id} placeholder ="Id." />
+            <button onClick = {() => {onSearch(id); setId('') }}>Agregar</button> 
       </div>
    );
 }
